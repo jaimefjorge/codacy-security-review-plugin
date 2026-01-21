@@ -2,9 +2,8 @@
   "name": "codacy-security-review",
   "description": "Security code review plugin combining Codacy CLI v2 static analysis with Claude's AI-powered security insights",
   "version": "1.0.0",
-  "author": {
-    "name": "Claude Code Community",
-    "url": "https://github.com/codacy/codacy-cli-v2"
+  "owner": {
+    "name": "Claude Code Community"
   },
   "homepage": "https://github.com/codacy/codacy-cli-v2",
   "repository": "https://github.com/codacy/codacy-cli-v2",
