@@ -18,24 +18,33 @@ A powerful Claude Code plugin that combines **Codacy CLI v2** static analysis wi
 
 - **Claude Code** (latest version)
 
-### Install the Plugin
+### Step 1: Install the Plugin
 
 ```bash
 /plugin marketplace add jaimefjorge/codacy-security-review-plugin
 ```
 
-Then run the setup command to install Codacy CLI v2 and configure your project:
+### Step 2: Run Setup (Required)
+
+**You must run setup before using any other commands.** This installs Codacy CLI v2 and configures your project:
 
 ```bash
 /codacy-security-review:setup
 ```
 
-The setup command will automatically:
+The setup command will:
 - Install Codacy CLI v2 if not already installed
 - Profile your project (languages, frameworks, architecture)
 - Generate project-specific security patterns
 - Configure the appropriate analysis tools
+
+## Updating the Plugin
+
+```bash
+claude plugin update codacy-security-review
 ```
+
+Or enable auto-updates via `/plugin` → Marketplaces → Enable auto-update.
 
 ## Usage
 
@@ -56,7 +65,7 @@ The setup command will automatically:
 
 | Command | Description |
 |---------|-------------|
-| `/codacy-security-review:setup` | Install Codacy CLI v2, profile project, and generate security patterns |
+| `/codacy-security-review:setup` | **Required first.** Install Codacy CLI v2, profile project, and generate security patterns |
 | `/codacy-security-review:security-review` | Full security review with AI analysis |
 | `/codacy-security-review:quick-scan` | Fast scan of specific files or changes |
 | `/codacy-security-review:help` | Show help information |
