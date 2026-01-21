@@ -1,4 +1,4 @@
-# Codacy Security Review Plugin for Claude Code
+# Codacy Plugin for Claude Code
 
 A powerful Claude Code plugin that combines **Codacy CLI v2** static analysis with **Claude's AI-powered** security expertise for comprehensive code security reviews.
 
@@ -21,7 +21,7 @@ A powerful Claude Code plugin that combines **Codacy CLI v2** static analysis wi
 ### Step 1: Install the Plugin
 
 ```bash
-/plugin marketplace add jaimefjorge/codacy-security-review-plugin
+/plugin marketplace add jaimefjorge/codacy-plugin
 ```
 
 ### Step 2: Run Setup (Required)
@@ -29,7 +29,7 @@ A powerful Claude Code plugin that combines **Codacy CLI v2** static analysis wi
 **You must run setup before using any other commands.** This installs Codacy CLI v2 and configures your project:
 
 ```bash
-/codacy-security-review:setup
+/codacy:setup
 ```
 
 The setup command will:
@@ -41,7 +41,7 @@ The setup command will:
 ## Updating the Plugin
 
 ```bash
-claude plugin update codacy-security-review
+claude plugin update codacy
 ```
 
 Or enable auto-updates via `/plugin` → Marketplaces → Enable auto-update.
@@ -52,23 +52,23 @@ Or enable auto-updates via `/plugin` → Marketplaces → Enable auto-update.
 
 ```bash
 # 1. Setup (installs Codacy CLI v2 + profiles project + generates security patterns)
-/codacy-security-review:setup
+/codacy:setup
 
 # 2. Run a full security review (uses project profile)
-/codacy-security-review:security-review
+/codacy:security-review
 
 # 3. Quick scan before committing
-/codacy-security-review:quick-scan --staged
+/codacy:quick-scan --staged
 ```
 
 ### Available Commands
 
 | Command | Description |
 |---------|-------------|
-| `/codacy-security-review:setup` | **Required first.** Install Codacy CLI v2, profile project, and generate security patterns |
-| `/codacy-security-review:security-review` | Full security review with AI analysis |
-| `/codacy-security-review:quick-scan` | Fast scan of specific files or changes |
-| `/codacy-security-review:help` | Show help information |
+| `/codacy:setup` | **Required first.** Install Codacy CLI v2, profile project, and generate security patterns |
+| `/codacy:security-review` | Full security review with AI analysis |
+| `/codacy:quick-scan` | Fast scan of specific files or changes |
+| `/codacy:help` | Show help information |
 
 ## Project Profiling (New!)
 
@@ -162,49 +162,49 @@ Contains project-specific security patterns to check, organized by:
 #### Setup
 ```bash
 # Basic setup with project profiling (recommended)
-/codacy-security-review:setup
+/codacy:setup
 
 # Setup with Codacy cloud integration
-/codacy-security-review:setup --remote
+/codacy:setup --remote
 
 # Force re-initialization and regenerate profile
-/codacy-security-review:setup --force
+/codacy:setup --force
 ```
 
 #### Security Review
 ```bash
 # Full project review (uses project profile if available)
-/codacy-security-review:security-review
+/codacy:security-review
 
 # Review specific directory
-/codacy-security-review:security-review src/
+/codacy:security-review src/
 
 # Use specific tool
-/codacy-security-review:security-review --tool trivy
+/codacy:security-review --tool trivy
 
 # Generate SARIF report
-/codacy-security-review:security-review --sarif
+/codacy:security-review --sarif
 
 # Filter by severity
-/codacy-security-review:security-review --severity high
+/codacy:security-review --severity high
 ```
 
 #### Quick Scan
 ```bash
 # Scan specific file (applies language+framework patterns)
-/codacy-security-review:quick-scan src/auth/login.js
+/codacy:quick-scan src/auth/login.js
 
 # Scan staged changes (great for pre-commit)
-/codacy-security-review:quick-scan --staged
+/codacy:quick-scan --staged
 
 # Scan specific commit
-/codacy-security-review:quick-scan --commit abc123
+/codacy:quick-scan --commit abc123
 
 # Scan pull request
-/codacy-security-review:quick-scan --pr 42
+/codacy:quick-scan --pr 42
 
 # Auto-fix supported issues
-/codacy-security-review:quick-scan --fix
+/codacy:quick-scan --fix
 ```
 
 ## What Gets Analyzed
@@ -319,14 +319,14 @@ const [rows] = await connection.execute(query, [userId]);
 ```yaml
 - name: Security Review
   run: |
-    claude "/codacy-security-review:security-review --sarif"
+    claude "/codacy:security-review --sarif"
     # Upload SARIF to GitHub Security
 ```
 
 ### Pre-commit Hook
 ```bash
 #!/bin/sh
-claude "/codacy-security-review:quick-scan --staged"
+claude "/codacy:quick-scan --staged"
 ```
 
 ### VS Code Task
@@ -335,7 +335,7 @@ claude "/codacy-security-review:quick-scan --staged"
   "label": "Security Scan Current File",
   "type": "shell",
   "command": "claude",
-  "args": ["/codacy-security-review:quick-scan", "${file}"]
+  "args": ["/codacy:quick-scan", "${file}"]
 }
 ```
 

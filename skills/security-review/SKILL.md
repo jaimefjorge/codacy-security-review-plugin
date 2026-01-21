@@ -36,7 +36,7 @@ If the profile exists, read it to understand:
 - Entry points for user input
 - Critical files to review
 
-If the profile does NOT exist, suggest running `/codacy-security-review:setup` first for a more targeted analysis.
+If the profile does NOT exist, suggest running `/codacy:setup` first for a more targeted analysis.
 
 ### Phase 2: Environment Check
 
@@ -50,7 +50,7 @@ If the profile does NOT exist, suggest running `/codacy-security-review:setup` f
 ls -la .codacy/ 2>/dev/null || echo "Not configured"
 ```
 
-If not configured, suggest running `/codacy-security-review:setup` first.
+If not configured, suggest running `/codacy:setup` first.
 
 **Note**: Use `~/.local/bin/codacy-cli-v2` for all commands if the binary is not in PATH.
 

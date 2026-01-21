@@ -1,12 +1,12 @@
 {
-  "name": "codacy-security-review",
+  "name": "codacy",
   "description": "Security code review plugin combining Codacy CLI v2 static analysis with Claude's AI-powered security insights",
   "version": "1.0.0",
   "author": {
     "name": "Jaime Jorge"
   },
-  "homepage": "https://github.com/jaimefjorge/codacy-security-review-plugin",
-  "repository": "https://github.com/jaimefjorge/codacy-security-review-plugin",
+  "homepage": "https://github.com/jaimefjorge/codacy-plugin",
+  "repository": "https://github.com/jaimefjorge/codacy-plugin",
   "license": "MIT",
   "keywords": [
     "security",

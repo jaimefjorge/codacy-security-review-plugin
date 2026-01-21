@@ -26,7 +26,7 @@ The user may provide: `$ARGUMENTS`
 
 ## Prerequisites
 
-Ensure Codacy CLI v2 is installed. The binary is named `codacy-cli-v2` and is typically installed at `~/.local/bin/codacy-cli-v2`. If not configured, run `/codacy-security-review:setup` first.
+Ensure Codacy CLI v2 is installed. The binary is named `codacy-cli-v2` and is typically installed at `~/.local/bin/codacy-cli-v2`. If not configured, run `/codacy:setup` first.
 
 ## Quick Scan Workflow
 
@@ -289,7 +289,7 @@ Suggest to the user based on their project profile:
 ### Pre-commit Hook
 ```bash
 # In .git/hooks/pre-commit or via husky
-claude "/codacy-security-review:quick-scan --staged"
+claude "/codacy:quick-scan --staged"
 ```
 
 ### CI/CD Pipeline
@@ -297,7 +297,7 @@ claude "/codacy-security-review:quick-scan --staged"
 # In .github/workflows/security.yml
 - name: Quick Security Scan
   run: |
-    claude "/codacy-security-review:quick-scan --pr ${{ github.event.pull_request.number }}"
+    claude "/codacy:quick-scan --pr ${{ github.event.pull_request.number }}"
 ```
 
 ### VS Code Task
@@ -306,13 +306,13 @@ claude "/codacy-security-review:quick-scan --staged"
   "label": "Security Scan Current File",
   "type": "shell",
   "command": "claude",
-  "args": ["/codacy-security-review:quick-scan", "${file}"]
+  "args": ["/codacy:quick-scan", "${file}"]
 }
 ```
 
 ## When to Suggest Full Review
 
-After a quick scan, suggest running `/codacy-security-review:security-review` if:
+After a quick scan, suggest running `/codacy:security-review` if:
 - Changes touch authentication or authorization code
 - New dependencies are added
 - Infrastructure files are modified

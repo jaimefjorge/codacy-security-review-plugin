@@ -1,30 +1,30 @@
 ---
 name: help
-description: Show help information about the Codacy Security Review plugin, available commands, and usage examples.
+description: Show help information about the Codacy plugin, available commands, and usage examples.
 disable-model-invocation: true
 ---
 
-# Codacy Security Review Plugin - Help
+# Codacy Plugin - Help
 
-You are providing help information about the Codacy Security Review plugin.
+You are providing help information about the Codacy plugin.
 
 ## Display This Information
 
 ```markdown
-# Codacy Security Review Plugin
+# Codacy Plugin
 
 Comprehensive security code review combining **Codacy CLI v2** static analysis
 with **Claude's AI-powered** security insights.
 
 ## Available Commands
 
-### `/codacy-security-review:setup`
+### `/codacy:setup`
 Initialize and configure Codacy CLI v2 for your project.
 
 **Usage:**
-- `/codacy-security-review:setup` - Local setup (uses existing configs)
-- `/codacy-security-review:setup --remote` - Setup with Codacy cloud integration
-- `/codacy-security-review:setup --force` - Force re-initialization
+- `/codacy:setup` - Local setup (uses existing configs)
+- `/codacy:setup --remote` - Setup with Codacy cloud integration
+- `/codacy:setup --force` - Force re-initialization
 
 **What it does:**
 1. Checks if Codacy CLI v2 is installed
@@ -34,14 +34,14 @@ Initialize and configure Codacy CLI v2 for your project.
 
 ---
 
-### `/codacy-security-review:security-review`
+### `/codacy:security-review`
 Full security review with AI-enhanced analysis.
 
 **Usage:**
-- `/codacy-security-review:security-review` - Full project review
-- `/codacy-security-review:security-review src/` - Review specific directory
-- `/codacy-security-review:security-review --tool trivy` - Focus on specific tool
-- `/codacy-security-review:security-review --sarif` - Generate SARIF report
+- `/codacy:security-review` - Full project review
+- `/codacy:security-review src/` - Review specific directory
+- `/codacy:security-review --tool trivy` - Focus on specific tool
+- `/codacy:security-review --sarif` - Generate SARIF report
 
 **What it does:**
 1. Runs Codacy static analysis (multiple tools)
@@ -53,15 +53,15 @@ Full security review with AI-enhanced analysis.
 
 ---
 
-### `/codacy-security-review:quick-scan`
+### `/codacy:quick-scan`
 Fast, targeted security scan for specific changes.
 
 **Usage:**
-- `/codacy-security-review:quick-scan file.js` - Scan specific file
-- `/codacy-security-review:quick-scan --staged` - Scan staged git changes
-- `/codacy-security-review:quick-scan --commit abc123` - Scan specific commit
-- `/codacy-security-review:quick-scan --pr 42` - Scan pull request changes
-- `/codacy-security-review:quick-scan --fix` - Auto-fix supported issues
+- `/codacy:quick-scan file.js` - Scan specific file
+- `/codacy:quick-scan --staged` - Scan staged git changes
+- `/codacy:quick-scan --commit abc123` - Scan specific commit
+- `/codacy:quick-scan --pr 42` - Scan pull request changes
+- `/codacy:quick-scan --fix` - Auto-fix supported issues
 
 **Ideal for:**
 - Pre-commit checks
@@ -70,7 +70,7 @@ Fast, targeted security scan for specific changes.
 
 ---
 
-### `/codacy-security-review:help`
+### `/codacy:help`
 Show this help information.
 
 ---
@@ -102,9 +102,9 @@ Codacy CLI v2 integrates with:
 
 ## Quick Start
 
-1. Run `/codacy-security-review:setup` to initialize
-2. Run `/codacy-security-review:security-review` for full analysis
-3. Use `/codacy-security-review:quick-scan --staged` before commits
+1. Run `/codacy:setup` to initialize
+2. Run `/codacy:security-review` for full analysis
+3. Use `/codacy:quick-scan --staged` before commits
 
 ## More Information
 

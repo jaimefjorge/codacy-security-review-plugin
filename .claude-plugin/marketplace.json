@@ -1,17 +1,17 @@
 {
-  "name": "codacy-security-review-marketplace",
-  "description": "Local marketplace for Codacy Security Review plugin",
+  "name": "codacy-marketplace",
+  "description": "Marketplace for Codacy plugin",
   "version": "1.0.0",
   "owner": {
     "name": "Jaime Jorge"
   },
   "plugins": [
     {
-      "name": "codacy-security-review",
+      "name": "codacy",
       "description": "Security code review plugin combining Codacy CLI v2 static analysis with Claude's AI-powered security insights",
       "source": {
         "source": "github",
-        "repo": "jaimefjorge/codacy-security-review-plugin"
+        "repo": "jaimefjorge/codacy-plugin"
       }
     }
   ]

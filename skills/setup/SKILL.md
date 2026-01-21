@@ -702,8 +702,8 @@ Provide a comprehensive summary including:
 ### Next Steps
 1. Review `.codacy/project-profile.yaml` and adjust if needed
 2. Review `.codacy/security-patterns.yaml` and customize severity levels
-3. Run `/codacy-security-review:security-review` for comprehensive analysis
-4. Run `/codacy-security-review:quick-scan` for fast targeted scans
+3. Run `/codacy:security-review` for comprehensive analysis
+4. Run `/codacy:quick-scan` for fast targeted scans
 
 ### Recommended Git Actions
 ```bash
@@ -726,4 +726,4 @@ The project profile should be regenerated when:
 - New frameworks are added
 - Architecture changes significantly
 
-Run `/codacy-security-review:setup --force` to regenerate the profile.
+Run `/codacy:setup --force` to regenerate the profile.
